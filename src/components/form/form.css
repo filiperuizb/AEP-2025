@@ -1,0 +1,133 @@
+.formulario {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 80px auto 0 auto;
+    padding: 0px;
+    height: auto;
+    max-width: 800px;
+    border: 0.5px solid #464646;
+    border-radius: 24px;
+    background-color: #c7eec5;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.entrada {
+    display: flex;
+    flex-direction: column;
+    margin: 12px 0;
+    width: auto;
+    max-width: 600px;
+}
+
+.inputFull {
+    width: 100%;
+    height: 40px;
+    padding: 0 12px;
+    border-radius: 40px;
+    border: 0.5px solid #464646;
+    margin-top: 8px;
+    transition: all 0.3s ease;
+    background-color: #FFF8F8;
+}
+
+.insideTextArea {
+    height: 150px;
+    padding: 16px;
+    border-radius: 40px;
+    border: 0.5px solid #464646;
+    resize: none;
+}
+
+.centralizar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imageInput {
+    border: 2px dashed #0da115;
+    height: 250px;
+    border-radius: 40px;
+    background-color: #FFF8F8;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.imageInputSize {
+    width: 150px;
+    height: 125px;
+}
+
+.buttonSubmit {
+    color: #fefefe;
+    width: 256px;
+    text-align: center;
+    border: 0.5px solid #fefefe;
+    border-radius: 40px;
+    background-color: #5CD642;
+    margin-top: 20px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.buttonSubmit:hover {
+    background-color: #e7e7e7;
+    border: 1px solid #000000;
+}
+
+.paddingImageInput {
+    padding: 64px;
+}
+
+.generalMargin{
+    margin: 80px;
+}
+
+.inputFull:hover{
+    border: 3px solid #0da115;
+}
+
+.textInputsOnly{
+    margin-bottom: 40px;
+}
+
+.buttonSubmitArea {
+    display: flex;
+    justify-content: center;
+    gap: 24px; 
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.bannerImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 600px;
+}
+
+.marginForAll{
+    margin-left: 32px;
+    margin-right: 32px;
+}
+
+.titleMargin{
+    margin-top: 24px;
+}
+
+.buttonClear {
+    color: #5CD642;
+    width: 256px;
+    text-align: center;
+    border: 0.5px solid #464646;
+    border-radius: 40px;
+    background-color: #fefefe;
+    margin-top: 20px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}

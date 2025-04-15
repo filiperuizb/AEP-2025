@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #fefefa;
+}
+
+@font-face {
+  font-family: 'CodeBold';
+  src: url('../src/assets/fonts/codebold.otf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: 'CodeBold';
+}
+
+
+code {
+  font-family: 'code-bold',
+    monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}

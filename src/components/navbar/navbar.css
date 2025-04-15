@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: 'CodeBold', sans-serif;
+}
+
+:root {
+    --navbar-background: #ffffff73;
+    --color-font: #0A171D;
+    --button-navbar: #5CD642;
+}
+
+.nav1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    z-index: 999999;
+}
+
+.navbar1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 8px 15vw;
+    background: var(--navbar-background);
+    backdrop-filter: blur(5px);
+    z-index: 999999;
+    max-width: 100vw; 
+    overflow: hidden;
+    font-family: codebold;
+}
+
+
+.nav1 .logo img {
+    max-width: 60px;
+    height: auto;
+}
+
+.lixozero {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.lixo {
+    color: #0A171D;
+}
+
+.zero {
+    color: #5CD642;
+}
+
+.navbar1 .menu-navbar1 {
+    flex-grow: 1; 
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.navbar1 .menu-navbar1 ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 1rem; 
+}
+
+.navbar1 .menu-navbar1 li a {
+    text-decoration: none;
+    color: var(--color-font);
+    font-size: 18px; 
+    transition: all 0.5s linear;
+    padding: 5px 8px;
+}
+
+.navbar1 .menu-navbar1 li a:hover {
+    background: var(--button-navbar);
+    border-radius: 18px;
+}
+
+.navbar1 .menu-navbar1 .home {
+    background: var(--button-navbar);
+    padding: 5px 10px;
+    border-radius: 18px;
+}
+
+
+body {
+    overflow-x: hidden;
+}
+
+.navbar1 .menu-navbar1 li a.active {
+    background: var(--button-navbar);
+    border-radius: 15px;
+}
+
+.nav-link {
+    cursor: pointer;
+}

@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "nome": "Enzo Ayres Bettini",
+        "img": "/imgEquipe/enzo.jpeg",
+        "github": "https://github.com/EnzoBettini",
+        "cargo": "Desenvolvedor e Designer"
+    },
+
+    {
+        "id": 2,
+        "nome": "Filipe Ruiz Boligon",
+        "img": "/imgEquipe/filipe.png",
+        "github": "https://github.com/filiperuizb/",
+        "cargo": "Desenvolvedor e Designer"
+    },
+
+    {
+        "id": 3,
+        "nome": "João Miguel Bonfim",
+        "img": "/imgEquipe/joao.jpg",
+        "github": "https://github.com/jmbonfim",
+        "cargo": "Desenvolvedor e Designer"
+    }
+
+]
