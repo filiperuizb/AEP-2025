@@ -1,92 +1,189 @@
 .header-container {
-    position: relative;
-    text-align: center;
-    padding: 0vw;
+  position: relative;
+  text-align: center;
+  padding: 0;
+  overflow: hidden;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(220, 255, 222, 0.2) 0%, rgba(10, 23, 29, 0.05) 100%);
+}
+
+.particles-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, rgba(92, 214, 66, 0.1) 2px, transparent 2px);
+  background-size: 50px 50px;
+  z-index: -1;
+  animation: particlesFade 20s infinite linear;
+}
+
+@keyframes particlesFade {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.3;
+  }
 }
 
 #texto-header {
-    margin-top: 10vw;
-    color: #0A171D; 
+  margin-top: 5vw;
+  color: #0a171d;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-out;
+  padding: 0 20px;
 }
 
-.card {
-    width: 100%; 
-    height: 20vw;
-    background-image: url("../../img/banner.png");
-    background-size: contain;
-    background-position: center;
-    border: none;
+#texto-header.animate-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-@keyframes colorShift {
-    0% {
-        background-position: -100%;
-    }
-    100% {
-        background-position: 100%;
-    }
+.welcome-text {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #2a5a30;
+}
+
+.header-underline {
+  height: 4px;
+  width: 0;
+  background: linear-gradient(90deg, #5cd642, #0a171d, #5cd642);
+  margin: 1rem auto 2rem;
+  transition: width 1.5s ease-out 0.5s;
+}
+
+#texto-header.animate-in .header-underline {
+  width: 200px;
 }
 
 #texto-header h1 {
-    font-size: 4rem;
-    font-weight: bold;
-    background: linear-gradient(to right, 
-        #5CD642 10%,  
-        #0A171D 30%,   
-        #5CD642 60%,    
-        #0A171D 80%
-    );      
-    background-size: 200% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    white-space: nowrap;
-    animation: colorShift 6.5s infinite linear;
+  font-size: 4rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #5cd642 10%, #0a171d 30%, #5cd642 60%, #0a171d 80%);
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  white-space: nowrap;
+  animation: colorShift 6.5s infinite linear;
+  text-shadow: 0 5px 15px rgba(92, 214, 66, 0.2);
+  letter-spacing: 2px;
 }
 
+@keyframes colorShift {
+  0% {
+    background-position: -100%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+.card {
+  width: 100%;
+  height: 20vw;
+  background-image: url("../../img/banner.png");
+  background-size: contain;
+  background-position: center;
+  border: none;
+  margin-top: 2rem;
+  position: relative;
+  transition: transform 0.5s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(92, 214, 66, 0.2) 0%, rgba(10, 23, 29, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
 
 @media (max-width: 1024px) {
-    #texto-header {
-        margin-top: 15vw;
-    }
+  #texto-header {
+    margin-top: 10vw;
+  }
 
-    #texto-header h1 {
-        font-size: 3rem;
-    }
+  #texto-header h1 {
+    font-size: 3rem;
+  }
 
-    .card {
-        height: 25vw;
-        background-size: contain;
-        background-position: center right;
-    }
+  .card {
+    height: 25vw;
+    background-size: contain;
+    background-position: center right;
+  }
+
+  .welcome-text {
+    font-size: 1.3rem;
+  }
 }
 
 @media (max-width: 768px) {
-    #texto-header {
-        margin-top: 20vw;
-    }
+  #texto-header {
+    margin-top: 15vw;
+  }
 
-    #texto-header h1 {
-        font-size: 2.5rem;
-        white-space: normal; 
-    }
+  #texto-header h1 {
+    font-size: 2.5rem;
+    white-space: normal;
+  }
 
-    .card {
-        height: 30vw;
-    }
+  .card {
+    height: 30vw;
+  }
+
+  .welcome-text {
+    font-size: 1.1rem;
+  }
+
+  .header-underline {
+    margin: 0.5rem auto 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
-    #texto-header {
-        margin-top: 25vw;
-    }
+  #texto-header {
+    margin-top: 20vw;
+  }
 
-    #texto-header h1 {
-        font-size: 2rem;
-        text-align: center;
-    }
+  #texto-header h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
 
-    .card {
-        height: 35vw;
-    }
+  .card {
+    height: 35vw;
+  }
+
+  .welcome-text {
+    font-size: 1rem;
+  }
 }

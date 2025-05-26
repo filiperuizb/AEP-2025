@@ -131,3 +131,8 @@
     cursor: pointer;
     transition: all 0.3s ease;
 }
+
+.buttonClear:hover{
+    background-color: #0da115;
+    border-radius: 1px solid black;
+}

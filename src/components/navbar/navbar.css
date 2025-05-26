@@ -104,3 +104,66 @@ body {
 .nav-link {
     cursor: pointer;
 }
+
+.menu-navbar1 {
+  transition: max-height 0.3s;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .navbar1 {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 5vw;
+    height: auto;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #5cd642;
+    margin-left: auto;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .menu-navbar1 {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    background: #f5fff5e6;
+    transition: max-height 0.3s;
+  }
+
+  .menu-navbar1.open {
+    max-height: 300px;
+    padding-bottom: 10px;
+  }
+
+  .menu-navbar1 ul {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+
+  .menu-navbar1 li {
+    width: 100%;
+    text-align: left;
+    margin: 0;
+  }
+
+  .menu-navbar1 li a {
+    display: block;
+    width: 100%;
+    padding: 12px 0 12px 16px;
+    font-size: 18px;
+  }
+}

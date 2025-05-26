@@ -1,0 +1,42 @@
+.form-page-container {
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(220, 255, 222, 0.3) 100%);
+}
+
+.parallax-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.bg-1 {
+  background-image: radial-gradient(circle at 10% 20%, rgba(92, 214, 66, 0.05) 0%, transparent 70%);
+}
+
+.bg-2 {
+  background-image: radial-gradient(circle at 90% 50%, rgba(92, 214, 66, 0.05) 0%, transparent 70%);
+}
+
+.bg-3 {
+  background-image: radial-gradient(circle at 30% 80%, rgba(92, 214, 66, 0.05) 0%, transparent 70%);
+}
+
+/* Adiciona uma animação sutil de fade-in para a página inteira */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.form-page-container > div:not(:first-child) {
+  animation: fadeIn 1s ease-out;
+}
