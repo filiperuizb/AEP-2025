@@ -7,9 +7,11 @@ import Footer from "../../components/footer/footer"
 export default function DashboardPage() {
   return (
     <div>
-      <Navbar />
-      <Dashboard />
-      <Footer />
+      <div>
+        <Navbar />
+      </div>
+      <div><Dashboard /></div>
+      <div><Footer /></div>
     </div>
   )
 }
