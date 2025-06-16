@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import "./form.css"
+import { salvarReport } from "../../assets/utils/localStorage.js"
 import image from "../../img/imageUpload.png"
 import banner from "../../img/banner.png"
 
@@ -16,6 +17,7 @@ function Form() {
   })
 
   const [imagePreview, setImagePreview] = useState(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const formRef = useRef(null)
 
   const handleChange = (e) => {
@@ -35,19 +37,25 @@ function Form() {
     }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    alert("Formulário enviado com sucesso!")
+    setIsSubmitting(true)
 
-    setFormData({
-      name: "",
-      phone: "",
-      address: "",
-      reference: "",
-      message: "",
-      image: null,
-    })
-    setImagePreview(null)
+    try {
+      const reportId = Date.now().toString()
+
+      salvarReport(reportId, formData.name, formData.phone, formData.address, formData.reference, imagePreview)
+
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+
+      alert("Formulário enviado e salvo com sucesso!")
+      handleClear()
+    } catch (error) {
+      alert("Erro ao enviar formulário. Tente novamente.")
+      console.error("Erro:", error)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleClear = () => {
@@ -101,6 +109,7 @@ function Form() {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
+                placeholder="Digite seu nome completo"
                 required
               />
             </div>
@@ -114,6 +123,7 @@ function Form() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
+                placeholder="(11) 99999-9999"
                 required
               />
             </div>
@@ -127,6 +137,7 @@ function Form() {
                 name="address"
                 value={formData.address}
                 onChange={handleChange}
+                placeholder="Rua, número, bairro, cidade"
                 required
               />
             </div>
@@ -140,13 +151,14 @@ function Form() {
                 name="reference"
                 value={formData.reference}
                 onChange={handleChange}
+                placeholder="Ex: Próximo ao mercado, escola..."
                 required
               />
             </div>
           </div>
 
           <div className="textInputsOnly marginForAll">
-            <div className="entradas centralizar imageInput paddingImageInput">
+            <div className="entrada centralizar imageInput paddingImageInput">
               {imagePreview ? (
                 <div className="preview-container">
                   <img src={imagePreview || "/placeholder.svg"} alt="Preview" className="image-preview" />
@@ -164,6 +176,7 @@ function Form() {
               ) : (
                 <>
                   <img className="imageInputSize" src={image || "/placeholder.svg"} alt="Upload de imagem" />
+                  <p className="upload-text">Clique para fazer upload da imagem</p>
                   <input
                     type="file"
                     id="imagem"
@@ -177,7 +190,7 @@ function Form() {
             </div>
           </div>
 
-          <div className="bannerwRAPPER">
+          <div className="bannerWrapper">
             <img className="bannerImage" src={banner || "/placeholder.svg"} alt="Banner" />
           </div>
 
@@ -189,16 +202,17 @@ function Form() {
               name="message"
               value={formData.message}
               onChange={handleChange}
+              placeholder="Descreva detalhadamente o problema encontrado..."
               required
             ></textarea>
           </div>
 
           <div className="centralizar buttonSubmitArea marginForAll">
-            <button className="btn buttonClear" type="button" onClick={handleClear}>
+            <button className="btn buttonClear" type="button" onClick={handleClear} disabled={isSubmitting}>
               Limpar
             </button>
-            <button className="btn buttonSubmit" type="submit">
-              Enviar
+            <button className="btn buttonSubmit" type="submit" disabled={isSubmitting}>
+              {isSubmitting ? "Enviando..." : "Enviar"}
             </button>
           </div>
         </form>

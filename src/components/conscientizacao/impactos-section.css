@@ -1,0 +1,134 @@
+.impactos-section {
+  padding: 100px 20px;
+  background: #fefefa;
+  position: relative;
+  overflow: hidden;
+}
+
+.impactos-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(120deg, rgba(239, 68, 68, 0.03) 0%, transparent 50%),
+    linear-gradient(240deg, rgba(245, 158, 11, 0.03) 0%, transparent 50%);
+  z-index: -1;
+}
+
+.impactos {
+  color: #ef4444;
+}
+
+.lixo {
+  color: #0a171d;
+}
+
+.impactos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.impacto-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+  transition: all 0.5s ease;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.impacto-card.card-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.impacto-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.impacto-card.red {
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.impacto-card.red:hover {
+  border-color: #ef4444;
+}
+
+.impacto-card.orange {
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.impacto-card.orange:hover {
+  border-color: #f59e0b;
+}
+
+.impacto-card.blue {
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.impacto-card.blue:hover {
+  border-color: #3b82f6;
+}
+
+.impacto-card.purple {
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.impacto-card.purple:hover {
+  border-color: #8b5cf6;
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.impacto-card.red .card-icon {
+  color: #ef4444;
+}
+
+.impacto-card.orange .card-icon {
+  color: #f59e0b;
+}
+
+.impacto-card.blue .card-icon {
+  color: #3b82f6;
+}
+
+.impacto-card.purple .card-icon {
+  color: #8b5cf6;
+}
+
+.impacto-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #0a171d;
+}
+
+.impacto-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .impactos-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .impacto-card {
+    padding: 30px 20px;
+  }
+}

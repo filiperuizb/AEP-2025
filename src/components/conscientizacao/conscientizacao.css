@@ -1,0 +1,48 @@
+.conscientizacao-container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgba(220, 255, 222, 0.1) 0%, rgba(10, 23, 29, 0.02) 100%);
+}
+
+.section-observer {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.section-observer.section-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #0a171d;
+  letter-spacing: 1px;
+}
+
+.section-title p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .section-title h2 {
+    font-size: 2rem;
+  }
+
+  .section-title p {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+}

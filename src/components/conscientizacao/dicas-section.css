@@ -1,0 +1,124 @@
+.dicas-section {
+  padding: 100px 20px;
+  background: #fefefa;
+  position: relative;
+  overflow: hidden;
+}
+
+.dicas-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(120deg, rgba(92, 214, 66, 0.05) 0%, transparent 50%),
+    linear-gradient(240deg, rgba(92, 214, 66, 0.05) 0%, transparent 50%);
+  z-index: -1;
+}
+
+.dicas {
+  color: #5cd642;
+}
+
+.futuro {
+  color: #0a171d;
+}
+
+.dicas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dica-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fff8 100%);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(92, 214, 66, 0.1);
+  transition: all 0.5s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.dicas-section.dicas-animate .dica-card {
+  opacity: 1;
+  transform: translateY(0);
+  animation: dicasSlideIn 0.8s ease-out forwards;
+}
+
+.dica-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.dica-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.dica-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.dica-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.dica-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.dica-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.dica-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(92, 214, 66, 0.2);
+  border-color: #5cd642;
+}
+
+.dica-icon {
+  font-size: 3rem;
+  color: #5cd642;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.dica-card:hover .dica-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.dica-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #0a171d;
+}
+
+.dica-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+@keyframes dicasSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .dicas-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .dica-card {
+    padding: 30px 20px;
+  }
+}

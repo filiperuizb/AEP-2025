@@ -2,7 +2,6 @@
 
 import { useEffect } from "react"
 import Navbar from "../../components/navbar/navbar"
-import Subnav from "../../components/subnav/subnav"
 import Header from "../../components/header/header"
 import Sobre from "../../components/sobre/sobre"
 import Funcionalidade from "../../components/funcionalidades/funcionalidades"
@@ -38,7 +37,6 @@ function Home() {
       <div id="navbar">
         <Navbar />
       </div>
-      <Subnav />
       <div id="header">
         <Header />
       </div>

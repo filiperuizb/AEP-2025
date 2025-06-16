@@ -41,13 +41,13 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-link">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" to="/dashboard">
                 Dashboard
               </Link>
             </li>
             <li className="nav-link">
-              <Link className="nav-link" to="/">
-                Conscientizção {/* Corrigir para "Conscientização" */}
+              <Link className="nav-link" to="/conscientizacao">
+                Conscientizção 
               </Link>
             </li>
           </ul>

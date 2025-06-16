@@ -1,138 +1,309 @@
 .formulario {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 1rem;
-    margin: 80px auto 0 auto;
-    padding: 0px;
-    height: auto;
-    max-width: 800px;
-    border: 0.5px solid #464646;
-    border-radius: 24px;
-    background-color: #c7eec5;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 80px auto 0 auto;
+  padding: 0px;
+  height: auto;
+  max-width: 800px;
+  border: 0.5px solid #464646;
+  border-radius: 24px;
+  background-color: #c7eec5;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
 }
 
 .entrada {
-    display: flex;
-    flex-direction: column;
-    margin: 12px 0;
-    width: auto;
-    max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  margin: 12px 0;
+  width: auto;
+  max-width: 600px;
+}
+
+.entrada label {
+  font-weight: 600;
+  color: #2d5016;
+  margin-bottom: 4px;
+  font-size: 14px;
 }
 
 .inputFull {
-    width: 100%;
-    height: 40px;
-    padding: 0 12px;
-    border-radius: 40px;
-    border: 0.5px solid #464646;
-    margin-top: 8px;
-    transition: all 0.3s ease;
-    background-color: #FFF8F8;
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 40px;
+  border: 0.5px solid #464646;
+  margin-top: 8px;
+  transition: all 0.3s ease;
+  background-color: #fff8f8;
+  font-size: 14px;
+}
+
+.inputFull::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+.inputFull:focus {
+  outline: none;
+  border: 2px solid #0da115;
+  box-shadow: 0 0 0 3px rgba(13, 161, 21, 0.1);
 }
 
 .insideTextArea {
-    height: 150px;
-    padding: 16px;
-    border-radius: 40px;
-    border: 0.5px solid #464646;
-    resize: none;
+  height: 150px;
+  padding: 16px;
+  border-radius: 40px;
+  border: 0.5px solid #464646;
+  resize: none;
+  font-family: inherit;
 }
 
 .centralizar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .imageInput {
-    border: 2px dashed #0da115;
-    height: 250px;
-    border-radius: 40px;
-    background-color: #FFF8F8;
-    flex-direction: column;
-    gap: 12px;
+  border: 2px dashed #0da115;
+  height: 250px;
+  border-radius: 40px;
+  background-color: #fff8f8;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.imageInput:hover {
+  border-color: #5cd642;
+  background-color: #f0fff0;
 }
 
 .imageInputSize {
-    width: 150px;
-    height: 125px;
+  width: 150px;
+  height: 125px;
+  opacity: 0.7;
+}
+
+.upload-text {
+  color: #0da115;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.preview-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.image-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 38px;
+}
+
+.remove-image {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.remove-image:hover {
+  background: #cc0000;
+  transform: scale(1.1);
 }
 
 .buttonSubmit {
-    color: #fefefe;
-    width: 256px;
-    text-align: center;
-    border: 0.5px solid #fefefe;
-    border-radius: 40px;
-    background-color: #5CD642;
-    margin-top: 20px;
-    padding: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  color: #fefefe;
+  width: 256px;
+  text-align: center;
+  border: 0.5px solid #fefefe;
+  border-radius: 40px;
+  background-color: #5cd642;
+  margin-top: 20px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 16px;
 }
 
-.buttonSubmit:hover {
-    background-color: #e7e7e7;
-    border: 1px solid #000000;
+.buttonSubmit:hover:not(:disabled) {
+  background-color: #4caf50;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(92, 214, 66, 0.3);
+}
+
+.buttonSubmit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .paddingImageInput {
-    padding: 64px;
+  padding: 64px;
 }
 
-.generalMargin{
-    margin: 80px;
+.generalMargin {
+  margin: 80px;
 }
 
-.inputFull:hover{
-    border: 3px solid #0da115;
+.inputFull:hover {
+  border: 3px solid #0da115;
 }
 
-.textInputsOnly{
-    margin-bottom: 40px;
+.textInputsOnly {
+  margin-bottom: 40px;
 }
 
 .buttonSubmitArea {
-    display: flex;
-    justify-content: center;
-    gap: 24px; 
-    margin-top: 24px;
-    margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .bannerImage {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 600px;
+  max-width: 100%;
 }
 
-.marginForAll{
-    margin-left: 32px;
-    margin-right: 32px;
+.bannerWrapper {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
 }
 
-.titleMargin{
-    margin-top: 24px;
+.marginForAll {
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.titleMargin {
+  margin-top: 24px;
+  color: #2d5016;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .buttonClear {
-    color: #5CD642;
-    width: 256px;
-    text-align: center;
-    border: 0.5px solid #464646;
-    border-radius: 40px;
-    background-color: #fefefe;
-    margin-top: 20px;
-    padding: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  color: #5cd642;
+  width: 256px;
+  text-align: center;
+  border: 0.5px solid #464646;
+  border-radius: 40px;
+  background-color: #fefefe;
+  margin-top: 20px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 16px;
 }
 
-.buttonClear:hover{
-    background-color: #0da115;
-    border-radius: 1px solid black;
+.buttonClear:hover:not(:disabled) {
+  background-color: #0da115;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(13, 161, 21, 0.3);
+}
+
+.buttonClear:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.form-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e8f5e8 0%, #c7eec5 100%);
+  padding: 20px;
+}
+
+.form-animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .generalMargin {
+    margin: 20px;
+  }
+
+  .marginForAll {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .buttonSubmitArea {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .buttonSubmit,
+  .buttonClear {
+    width: 200px;
+  }
+
+  .bannerImage {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .formulario {
+    margin: 20px auto;
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .titleMargin {
+    font-size: 24px;
+  }
+
+  .imageInput {
+    height: 200px;
+  }
+
+  .paddingImageInput {
+    padding: 32px;
+  }
 }
